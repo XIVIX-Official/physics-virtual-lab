@@ -1,0 +1,39 @@
+{
+  "name": "physics-virtual-lab",
+  "version": "1.0.0",
+  "description": "Interactive physics simulations for remote students, powered by the XIVIX Research Initiative.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodexusTechnologies/physics-virtual-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CodexusTechnologies/physics-virtual-lab/issues"
+  },
+  "homepage": "https://github.com/CodexusTechnologies/physics-virtual-lab#readme",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "next": "^15.5.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "vite": "^6.3.6"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "eslint": "^9.37.0",
+    "eslint-plugin-react": "^7.37.5",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "prettier": "^3.6.2"
+  }
+}
