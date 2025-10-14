@@ -1,4 +1,23 @@
-import { styled } from '@emotion/styled';
+import styled from '@emotion/styled';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const BackButton = styled.button`
+  background-color: #f0f0f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  
+  &:hover {
+    background-color: #e0e0e0;
+  }
+`;
 
 const Panel = styled.div`
   background-color: white;

@@ -2,8 +2,7 @@ export const config = {
   canvas: {
     width: 800,
     height: 600,
-    scale: 100, // pixels per meter
-    origin: { x: 400, y: 300 }, // center of canvas
+    scale: 50, // pixels per meter (smaller scale to see more of the world)
   },
   physics: {
     timeStep: 1 / 60, // 60 FPS
@@ -17,7 +16,7 @@ export const config = {
       label: 'Mass',
       type: 'number',
       min: 0.1,
-      max: 10.0,
+      max: 5.0,
       step: 0.1,
       value: 1.0,
       unit: 'kg',
@@ -27,9 +26,9 @@ export const config = {
       label: 'Applied Force',
       type: 'number',
       min: 0,
-      max: 50,
-      step: 1,
-      value: 10,
+      max: 20,
+      step: 0.5,
+      value: 5,
       unit: 'N',
     },
     {

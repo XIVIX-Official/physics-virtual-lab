@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { styled } from '@emotion/styled';
+import styled from '@emotion/styled';
 
 const Canvas = styled.canvas`
   background-color: white;
@@ -12,11 +12,12 @@ const PhysicsCanvas = ({
   height = 600,
   onSetup,
   onDraw,
-  isRunning,
+  isRunning = true,
 }) => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const animationFrameRef = useRef(null);
+  const lastTimestampRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -28,7 +29,12 @@ const PhysicsCanvas = ({
     canvas.height = height * dpr;
     canvas.style.width = width + 'px';
     canvas.style.height = height + 'px';
-    context.scale(dpr, dpr);
+
+    // Apply retina scale transform
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    
+    // Move origin to center for easier physics calculations
+    context.translate(width / 2, height / 2);
 
     contextRef.current = context;
 
@@ -37,30 +43,26 @@ const PhysicsCanvas = ({
       onSetup(context);
     }
 
-    // Cleanup function
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, [width, height, onSetup]);
+    // Clear any existing animation frame
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
 
-  useEffect(() => {
-    if (!contextRef.current || !onDraw) return;
-
-    let lastTimestamp = 0;
     const animate = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp;
-      const deltaTime = (timestamp - lastTimestamp) / 1000; // Convert to seconds
-      lastTimestamp = timestamp;
+      if (!lastTimestampRef.current) lastTimestampRef.current = timestamp;
+      const deltaTime = (timestamp - lastTimestampRef.current) / 1000; // Convert to seconds
+      lastTimestampRef.current = timestamp;
 
-      const context = contextRef.current;
-      context.clearRect(0, 0, width, height);
-      onDraw(context, deltaTime);
-
-      if (isRunning) {
-        animationFrameRef.current = requestAnimationFrame(animate);
+      context.save();
+      context.clearRect(-width / 2, -height / 2, width, height);
+      
+      if (onDraw) {
+        onDraw(context, deltaTime);
       }
+      
+      context.restore();
+
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
     if (isRunning) {
@@ -72,7 +74,7 @@ const PhysicsCanvas = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [width, height, onDraw, isRunning]);
+  }, [width, height, onSetup, onDraw, isRunning]);
 
   return <Canvas ref={canvasRef} />;
 };
