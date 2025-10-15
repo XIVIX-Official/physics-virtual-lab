@@ -1,49 +1,23 @@
 {
   "name": "physics-virtual-lab",
-  "version": "1.0.0",
-  "description": "Interactive physics simulations for remote students, powered by the XIVIX Research Initiative.",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --force",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "test": "jest",
-    "lint": "eslint src",
-    "format": "prettier --write ."
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CodexusTechnologies/physics-virtual-lab.git"
-  },
-  "keywords": [
-    "physics",
-    "education",
-    "simulation",
-    "virtual-lab",
-    "react"
-  ],
-  "author": "XIVIX Research Initiative",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CodexusTechnologies/physics-virtual-lab/issues"
-  },
-  "homepage": "https://github.com/CodexusTechnologies/physics-virtual-lab#readme",
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.0.7"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.2.1",
+    "@google/genai": "^1.25.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^14.0.0",
-    "@vitejs/plugin-react": "^4.0.4",
-    "eslint": "^8.47.0",
-    "eslint-plugin-react": "^7.33.2",
-    "jest": "^29.6.2",
-    "jest-environment-jsdom": "^29.6.2",
-    "prettier": "^3.0.2",
-    "vite": "^4.4.9"
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
   }
 }
