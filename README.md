@@ -25,25 +25,22 @@ The **Physics Virtual Lab** provides a modern, intuitive, and interactive enviro
 
 ## 🧪 Simulations Included
 
-The lab currently features the following interactive simulations:
-
--   **Simple Pendulum:** Investigate the relationship between length, gravity, and the period of a pendulum.
--   **Projectile Motion:** Analyze the trajectory of projectiles by adjusting launch angle, velocity, and gravity.
--   **Spring-Mass System:** Explore simple harmonic motion, damping, and energy conservation.
--   **Electric Field:** Visualize electric field lines by placing positive and negative charges.
--   **Double-Slit Experiment:** Discover wave-particle duality and interference patterns of light.
--   **Special Relativity:** Observe time dilation and length contraction as you approach the speed of light.
--   **Quantum Tunneling:** See the quantum phenomenon of particles tunneling through potential barriers.
--   **RLC Circuit:** Analyze current and voltage behavior in a series RLC circuit with an AC source.
+-   **Simple Pendulum**
+-   **Projectile Motion**
+-   **Spring-Mass System**
+-   **Electric Field**
+-   **Double-Slit Experiment**
+-   **Special Relativity**
+-   **Quantum Tunneling**
+-   **RLC Circuit**
 
 ## 💻 Tech Stack
 
-This project is built with a modern frontend stack:
-
+-   **[Vite](https://vitejs.dev/)**: Next Generation Frontend Tooling.
 -   **[React](https://react.dev/)**: A JavaScript library for building user interfaces.
--   **[TypeScript](https://www.typescriptlang.org/)**: A typed superset of JavaScript that compiles to plain JavaScript.
--   **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development.
--   **[Recharts](https://recharts.org/)**: A composable charting library built on React components.
+-   **[TypeScript](https://www.typescriptlang.org/)**: A typed superset of JavaScript.
+-   **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework.
+-   **[Recharts](https://recharts.org/)**: A composable charting library.
 -   **[Google Gemini API](https://ai.google.dev/)**: Powers the intelligent AI Physics Tutor.
 
 ## 🚀 Getting Started
@@ -52,9 +49,8 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
--   A modern web browser.
--   A local web server to serve the files. The `live-server` VS Code extension or `python -m http.server` are great options.
--   A configured **Google Gemini API Key**.
+-   [Node.js](https://nodejs.org/) (v18 or later recommended)
+-   npm, yarn, or pnpm
 
 ### Installation & Setup
 
@@ -66,15 +62,26 @@ To get a local copy up and running, follow these simple steps.
     ```sh
     cd physics-virtual-lab
     ```
-3.  **Set up the Gemini API Key**
-    The AI Tutor requires a Google Gemini API key to function. The application is designed to securely access this key from a `process.env.API_KEY` environment variable, which must be made available to the browser context by your hosting platform or local server setup.
+3.  **Install NPM packages**
+    ```sh
+    npm install
+    ```
+4.  **Set up the Gemini API Key**
+    The AI Tutor requires a Google Gemini API key to function. Create a `.env` file in the root of the project and add your API key:
+    ```
+    VITE_API_KEY=YOUR_GEMINI_API_KEY
+    ```
+    The application is configured to securely access this key.
 
-4.  **Run the application**
-    Serve the project folder using a local web server and open the `index.html` file in your browser.
+5.  **Run the development server**
+    ```sh
+    npm run dev
+    ```
+    This will start the Vite development server, typically on `http://localhost:5173`. Open this URL in your browser to see the application.
 
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 ## 📧 Contact
 
