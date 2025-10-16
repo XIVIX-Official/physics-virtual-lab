@@ -8,7 +8,7 @@
 
 An open-source platform designed to make physics education accessible and engaging for remote learners through interactive, real-time simulations.
 
-![Physics Virtual Lab Screenshot](https://storage.googleapis.com/aistudio-project-images/b48b7890-50b3-4f24-9b63-14917631725b.png)
+![Physics Virtual Lab Logo](./icons/icon-512x512.png)
 
 ## 🔬 About The Project
 
@@ -23,7 +23,7 @@ The **Physics Virtual Lab** provides a modern, intuitive, and interactive enviro
 - **Fully Responsive:** Seamless experience on desktop, tablet, and mobile devices.
 - **Open Source:** Free to use, modify, and distribute.
 
-## 🧪 Simulations Included
+## ⚙️ Simulations Included
 
 -   **Simple Pendulum**
 -   **Projectile Motion**
